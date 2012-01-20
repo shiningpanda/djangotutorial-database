@@ -155,7 +155,7 @@ if os.getenv('JENKINS_URL', False):
     DATABASES['default'].update(dict(
         ENGINE=os.getenv('DBA_SQL_DJANGO_ENGINE'),
         USER=os.getenv('DBA_SQL_ADMIN'),
-        PASSWORD=os.getenv('DBA_SQL_PASSWORD'),
+        PASSWORD=os.getenv('DBA_SQL_ADMIN_PASSWORD'),
         HOST=os.getenv('DBA_SQL_HOST'),
         PORT=os.getenv('DBA_SQL_PORT'),
     ))
