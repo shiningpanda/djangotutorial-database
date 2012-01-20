@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'djangotutorial.db',            # Or path to database file if using sqlite3.
+        'NAME': 'djangotutorial',               # Or path to database file if using sqlite3.
         'USER': '',                             # Not used with sqlite3.
         'PASSWORD': '',                         # Not used with sqlite3.
         'HOST': '',                             # Set to empty string for localhost. Not used with sqlite3.
@@ -154,11 +154,9 @@ if os.getenv('JENKINS_URL', False):
     # Update database parameters for testing purposes
     DATABASES['default'].update(dict(
         ENGINE=os.getenv('DBA_SQL_DJANGO_ENGINE'),
-        NAME='dbname',
-        USER='dbuser',
-        PASSWORD='dbpwd',
+        USER=os.getenv('DBA_SQL_ADMIN'),
+        PASSWORD=os.getenv('DBA_SQL_PASSWORD'),
         HOST=os.getenv('DBA_SQL_HOST'),
         PORT=os.getenv('DBA_SQL_PORT'),
-        TEST_NAME='dbname',
     ))
 
