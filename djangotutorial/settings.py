@@ -154,6 +154,7 @@ if os.getenv('JENKINS_URL', False):
     # Update database parameters for testing purposes
     DATABASES['default'].update(dict(
         ENGINE=os.getenv('DBA_SQL_DJANGO_ENGINE'),
+        NAME='dbname',
         USER='dbuser',
         PASSWORD='dbpwd',
         HOST=os.getenv('DBA_SQL_HOST'),
